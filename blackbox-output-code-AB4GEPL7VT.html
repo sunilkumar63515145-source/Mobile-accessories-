@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy premium mobile accessories like cases, chargers, and screen protectors at MobileAcc. Fast shipping and top quality.">
+    <meta name="keywords" content="mobile accessories, phone cases, chargers, screen protectors, buy online">
+    <meta name="author" content="MobileAcc">
+    <title>Mobile Accessories Store - Buy Cases, Chargers & More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://yourusername.github.io/mobile-site/"> <!-- Replace with your URL -->
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a> <!-- Accessibility: Skip link -->
+    <header role="banner">
+        <div class="logo" aria-label="MobileAcc logo">MobileAcc</div>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="#" id="cart-link" aria-label="Shopping cart">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section id="home" class="hero">
+            <h1>Welcome to MobileAcc</h1>
+            <p>Top-quality accessories for your phone.</p>
+            <button onclick="scrollToProducts()" aria-label="Go to products section">Shop Now</button>
+        </section>
+
+        <section id="products" aria-labelledby="products-heading">
+            <h2 id="products-heading">Our Products</h2>
+            <label for="search-bar" class="sr-only">Search products</label> <!-- Screen reader only -->
+            <input type="text" id="search-bar" placeholder="Search products..." onkeyup="filterProducts()" aria-describedby="search-help">
+            <p id="search-help" class="sr-only">Type to filter products by name.</p>
+            <div class="product-grid" id="product-grid" role="list" aria-label="Product list">
+                <!-- Products loaded via JS -->
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Us</h2>
+            <p>We sell premium mobile accessories with fast shipping.</p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <form id="contact-form" role="form" aria-labelledby="contact-heading">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" placeholder="Name" required aria-required="true">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" placeholder="Email" required aria-required="true">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" placeholder="Message" required aria-required="true"></textarea>
+                <button type="submit" aria-label="Send contact message">Send</button>
+            </form>
+            <p id="contact-message-display" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2023 MobileAcc. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
