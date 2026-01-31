@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin panel for MobileAcc - Manage products, orders, and settings.">
+    <meta name="robots" content="noindex, nofollow"> <!-- SEO: No index for admin -->
+    <title>Admin Panel - MobileAcc</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#admin-main" class="skip-link">Skip to main content</a>
+    <div id="login" class="login-container" role="main" aria-labelledby="login-heading">
+        <h2 id="login-heading">Admin Login</h2>
+        <form id="login-form" role="form">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username" required aria-required="true">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" required aria-required="true">
+            <button type="submit" aria-label="Login to admin panel">Login</button>
+        </form>
+        <p id="login-error" role="alert" aria-live="assertive"></p>
+    </div>
+
+    <div id="admin-panel" style="display: none;" role="main" id="admin-main">
+        <header role="banner">
+            <h1>Admin Panel</h1>
+            <button onclick="logout()" aria-label="Logout from admin panel">Logout</button>
+        </header>
+        <nav role="navigation" aria-label="Admin navigation">
+            <button onclick="showSection('dashboard')" aria-label="Go to dashboard">Dashboard</button>
+            <button onclick="showSection('products')" aria-label="Manage products">Manage Products</button>
+            <button onclick="showSection('orders')" aria-label="View orders">View Orders</button>
+            <button onclick="showSection('settings')" aria-label="Go to settings">Settings</button>
+        </nav>
+        <!-- Rest of the sections remain the same, but add aria-labelledby to h2s -->
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
